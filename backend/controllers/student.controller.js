@@ -15,30 +15,43 @@ export const createStudent = async (req, res) => {
   }
 };
 
-export const getStudents = async (req, res) => {
+export const getStudentById = async (req, res) => {
   try {
-    const { search = "", page = 1, limit = 10 } = req.query;
-  
-    const students = await Student.find({
-      $or: [
-        { name: { $regex: search, $options: "i" } },
-        { email: { $regex: search, $options: "i" } },
-      ],
-    }).skip((page - 1) * limit).limit(parseInt(limit));
-  
-    res.status(200).json({message:"Students retrieved successfully", students});
+    const studentId = req.params?.id;
+    const student = await Student.findById(studentId);
+    if (!student) {
+      return res.status(404).json({ message: "Student not found" });
+    }
+    res.status(200).json({ message: "Student retrieved successfully", student });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
 };
 
-export const getStudentById = async (req, res) => {
+export const getStudents = async (req, res) => {
   try {
-    const studentId = req.params?.id;
+    const { search = "", page = 1, limit = 10 } = req.query;
 
-    const student = await Student.findById(studentId);
-    if (!student) return res.status(404).json({ message: "Student not found" });
-    res.status(200).json({message:"Student retrieved successfully", student});
+    const query = {
+      $or: [
+        { name: { $regex: search, $options: "i" } },
+        { email: { $regex: search, $options: "i" } },
+      ],
+    };
+
+    const students = await Student.find(query)
+      .skip((page - 1) * limit)
+      .limit(parseInt(limit));
+
+    const totalStudents = await Student.countDocuments(query);
+
+    res.status(200).json({
+      message: "Students retrieved successfully",
+      students,
+      totalStudents,
+      currentPage: Number(page),
+      totalPages: Math.ceil(totalStudents / limit),
+    });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
