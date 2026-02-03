@@ -85,7 +85,7 @@ const StudentList = () => {
               </tr>
             ) : (
               students.map((student, idx) => (
-                <tr key={student._id} style={{...styles.row, backgroundColor: idx % 2 === 0 ? '#fff' : '#f9f9f9'}}>
+                <tr key={student._id} style={styles.row}>
                   <td style={styles.td}><strong>{student.name}</strong></td>
                   <td style={styles.td}>{student.email}</td>
                   <td style={styles.td}>{student.course}</td>
@@ -115,6 +115,7 @@ const StudentList = () => {
         {totalPages > 1 && (
           <div style={styles.pagination}>
             <button
+              style={styles.pageBtn}
               disabled={page === 1}
               onClick={() => setPage(page - 1)}
             >
@@ -139,6 +140,7 @@ const StudentList = () => {
             })}
 
             <button
+              style={styles.pageBtn}
               disabled={page === totalPages}
               onClick={() => setPage(page + 1)}
             >
@@ -159,8 +161,7 @@ const styles = {
     padding: "30px",
     maxWidth: "1100px",
     margin: "0 auto",
-    minHeight: "calc(100vh - 80px)",
-    background: "#f9f9f9",
+    minHeight: "calc(100vh - 80px)"
   },
   title: {
     margin: "0 0 24px 0",
@@ -190,24 +191,24 @@ const styles = {
     background: "#fff",
     borderRadius: "8px",
     overflow: "hidden",
-    boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+    boxShadow: "0 5px 8px rgba(0,0,0,0.08)",
   },
   headerRow: {
-    background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    background: "#344ec2",
   },
   th: {
     padding: "14px",
     color: "#fff",
     textAlign: "left",
     fontWeight: "600",
-    fontSize: "13px",
+    fontSize: "15px",
   },
   row: {
-    borderBottom: "1px solid #eee",
+    borderBottom: "2px solid #eee",
   },
   td: {
     padding: "14px",
-    fontSize: "13px",
+    fontSize: "14px",
     color: "#333",
   },
   emptyCell: {

@@ -51,7 +51,7 @@ export default Navbar
 const styles = {
   nav: {
     padding: "15px 30px",
-    background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    background: "#344ec2",
     color: "#fff",
     display: "flex",
     justifyContent: "space-between",
@@ -67,20 +67,20 @@ const styles = {
   },
   title: {
     margin: 0,
-    fontSize: "24px",
+    fontSize: "20px",
     fontWeight: "bold",
     letterSpacing: "0.5px",
   },
   links: {
     display: "flex",
-    gap: "20px",
+    gap: "15px",
     alignItems: "center",
     flexWrap: "wrap",
   },
   link: {
     color: "#fff",
     textDecoration: "none",
-    fontSize: "18px",
+    fontSize: "15px",
     fontWeight: "500",
     padding: "8px 12px",
     borderRadius: "6px",
@@ -95,7 +95,7 @@ const styles = {
     paddingLeft: "20px",
   },
   user: {
-    fontSize: "18px",
+    fontSize: "15px",
     fontWeight: "500",
     opacity: 0.95,
   },

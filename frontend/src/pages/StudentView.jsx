@@ -125,9 +125,9 @@ const styles = {
   },
   label: {
     display: "block",
-    fontSize: "12px",
+    fontSize: "15px",
     fontWeight: "700",
-    color: "#666",
+    color: "#000000",
     textTransform: "uppercase",
     letterSpacing: "0.5px",
     marginBottom: "6px",

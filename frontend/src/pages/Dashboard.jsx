@@ -50,7 +50,6 @@ const styles = {
     maxWidth: "700px",
     margin: "0 auto",
     minHeight: "calc(100vh - 80px)",
-    background: "#f9f9f9",
   },
   title: {
     margin: "0 0 8px 0",
@@ -66,9 +65,9 @@ const styles = {
   },
   card: {
     padding: "28px",
-    background: "#fff",
+    background: "#e4eaf4",
     borderRadius: "10px",
-    boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+    boxShadow: "0 8px 78px rgba(0,0,0,0.08)",
     marginBottom: "24px",
   },
   section: {
