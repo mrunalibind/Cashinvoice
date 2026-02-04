@@ -3,6 +3,11 @@
 A full-stack Student Management System built using **React (Vite)** for the frontend and **Node.js + Express** for the backend.  
 The application supports **JWT authentication**, **role-based access control**, and **CRUD operations** with search and pagination.
 
+## Notes
+
+Earlier commits show a different contributor due to a Git configuration issue on the device. This has since been corrected.
+
+
 ---
 
 ## 🔗 Live Demo
