@@ -8,7 +8,6 @@ The application supports **JWT authentication**, **role-based access control**, 
 ## 🔗 Live Demo
 
 - **Frontend (UI)**: https://cashinvoice-frontend.onrender.com/  
-- **Backend (API)**: https://cashinvoice-backend.onrender.com
 
 ---
 
